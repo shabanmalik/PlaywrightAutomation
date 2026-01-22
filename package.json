@@ -1,0 +1,30 @@
+{
+  "name": "playwrightautomation",
+  "version": "1.0.0",
+  "description": "Production-grade Playwright framework with API injection for Practice Software Testing (Toolshop)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:scenario1": "playwright test tests/scenarios/scenario1-purchase-validation.spec.js",
+    "test:scenario2": "playwright test tests/scenarios/scenario2-inventory-accuracy.spec.js",
+    "test:scenario3": "playwright test tests/scenarios/scenario3-state-persistence.spec.js",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "api-testing",
+    "e2e",
+    "test-automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.9"
+  }
+}
