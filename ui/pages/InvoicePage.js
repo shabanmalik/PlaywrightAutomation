@@ -9,6 +9,8 @@ export class InvoicePage {
   async goto() {
     await this.page.goto('https://practicesoftwaretesting.com/account/invoices');
     await this.page.waitForLoadState('domcontentloaded');
+    await this.detailButton.waitFor({ state: 'visible', timeout: 15000 });
+
   }
 
   async clickDetailPage() {

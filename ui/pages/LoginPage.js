@@ -15,7 +15,7 @@ export class LoginPage {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
-    // await this.page.waitForURL('https://practicesoftwaretesting.com/account', { timeout: 15000 });
+    await this.page.waitForURL('https://practicesoftwaretesting.com/account', { timeout: 15000 });
   }
 
 }

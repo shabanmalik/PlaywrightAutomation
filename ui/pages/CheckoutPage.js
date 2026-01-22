@@ -22,9 +22,9 @@ export class CheckoutPage {
   }
 
   async goto() {
-    await this.page.goto('https://practicesoftwaretesting.com/#/checkout');
+    await this.page.goto('https://practicesoftwaretesting.com/checkout');
     await this.page.waitForLoadState('domcontentloaded');
-    await this.proceedToCheckout1.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
+    await this.proceedToCheckout1.waitFor({ state: 'visible', timeout: 5000 });
   }
 
   async clickProceedButton1() {
@@ -60,6 +60,7 @@ export class CheckoutPage {
 
   async clickConfirmButton() {
     await this.confirmButton.click();
+    await this.page.waitForTimeout(1000);
   }
 
   async getCartItems() {

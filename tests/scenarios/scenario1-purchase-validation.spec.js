@@ -58,7 +58,6 @@ test.describe('Scenario 1: End-to-End Purchase Validation', () => {
     await checkoutPage.clickConfirmButton();
     await checkoutPage.waitForPaymentConfirmationMessage();
     await checkoutPage.clickConfirmButton();
-    
     await invoicePage.goto();
     await invoicePage.clickDetailPage().catch(() => null);
 
