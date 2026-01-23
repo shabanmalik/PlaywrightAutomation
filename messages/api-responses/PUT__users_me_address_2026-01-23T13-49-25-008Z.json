@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-01-23T13:49:25.008Z",
+  "endpoint": "/users/me/address",
+  "method": "PUT",
+  "status": 404,
+  "data": {
+    "message": "Resource not found"
+  }
+}

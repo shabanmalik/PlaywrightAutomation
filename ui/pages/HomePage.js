@@ -19,15 +19,6 @@ export class HomePage {
     await this.page.waitForLoadState('domcontentloaded');
   }
 
-  async selectCategory(categoryName) {
-    if (await this.categoryFilter.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await this.categoryFilter.selectOption(categoryName);
-    } else {
-      await this.page.goto(`https://practicesoftwaretesting.com/category/${categoryName}`);
-    }
-    await this.page.waitForLoadState('domcontentloaded');
-  }
-
   async getProductNames() {
     await this.productNames.first().waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
     return await this.productNames.allTextContents();

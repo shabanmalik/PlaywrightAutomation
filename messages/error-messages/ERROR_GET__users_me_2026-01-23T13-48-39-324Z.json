@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-01-23T13:48:39.324Z",
+  "endpoint": "/users/me",
+  "method": "GET",
+  "error": "apiRequestContext.fetch: Target page, context or browser has been closed",
+  "stack": "apiRequestContext.fetch: Target page, context or browser has been closed\n    at ApiHelper.makeRequest (/Users/shaban/Documents/PlaywrightAutomation/api/utils/apiHelper.js:38:43)\n    at UserClient.getProfile (/Users/shaban/Documents/PlaywrightAutomation/api/clients/userClient.js:12:33)\n    at /Users/shaban/Documents/PlaywrightAutomation/tests/scenarios/scenario3-state-persistence.spec.js:48:40\n    at /Users/shaban/Documents/PlaywrightAutomation/tests/scenarios/scenario3-state-persistence.spec.js:47:24"
+}

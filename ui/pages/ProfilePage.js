@@ -9,8 +9,8 @@ export class ProfilePage {
   }
 
   async goto() {
-    await this.page.goto('https://practicesoftwaretesting.com/profile');
-    await this.page.waitForLoadState('networkidle');
+    await this.page.goto('https://practicesoftwaretesting.com/#/profile');
+    await this.page.waitForLoadState('domcontentloaded');
   }
 
   async getAddress() {

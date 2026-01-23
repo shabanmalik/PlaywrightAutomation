@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-23T13:46:41.358Z",
+  "endpoint": "/users/login",
+  "method": "POST",
+  "status": 200,
+  "data": {
+    "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5wcmFjdGljZXNvZnR3YXJldGVzdGluZy5jb20vdXNlcnMvbG9naW4iLCJpYXQiOjE3NjkxNzYwMDEsImV4cCI6MTc2OTE3NjMwMSwibmJmIjoxNzY5MTc2MDAxLCJqdGkiOiJ3T3BjdnF0M0JrVllRTU41Iiwic3ViIjoiMDFrZm5ocHN3cHE3cmJ4Mm14OGpicjNhcGEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6InVzZXIifQ.vHDhyxl00iEJGJMZZHIkimOq8bGQS9Gj17YIx3x4oVE",
+    "token_type": "bearer",
+    "expires_in": 300
+  }
+}
