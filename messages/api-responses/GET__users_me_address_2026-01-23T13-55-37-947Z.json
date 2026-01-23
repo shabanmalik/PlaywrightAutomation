@@ -1,9 +1,0 @@
-{
-  "timestamp": "2026-01-23T13:55:37.947Z",
-  "endpoint": "/users/me/address",
-  "method": "GET",
-  "status": 404,
-  "data": {
-    "message": "Resource not found"
-  }
-}
