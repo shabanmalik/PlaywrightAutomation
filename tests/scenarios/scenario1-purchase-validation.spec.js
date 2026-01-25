@@ -16,7 +16,7 @@ test.describe('Scenario 1: End-to-End Purchase Validation', () => {
 
   test.beforeEach(async ({ page, request }) => {
     authClient = new AuthClient(request);
-    productClient = new ProductClient(request, authClient);
+    productClient = new ProductClient(request);
     orderClient = new OrderClient(request, authClient);
 
     registerPage = new RegisterPage(page);
@@ -78,10 +78,7 @@ test.describe('Scenario 1: End-to-End Purchase Validation', () => {
 
     const normalize = (value) => value.toString().replace(/INV-/i, '').replace(/^0+/, '').trim();
     const backendInvoiceNumber = backendOrder.invoice_number || backendOrder.invoice_id;
-    
-    if (backendInvoiceNumber) {
-      expect(normalize(backendInvoiceNumber)).toBe(normalize(uiOrderId));
-    }
+    expect(normalize(backendInvoiceNumber)).toBe(normalize(uiOrderId));
     
     const backendTotal = parseFloat(backendOrder.total || backendOrder.total_amount);
     expect(backendTotal).toBeCloseTo(uiTotalAmount, 2);

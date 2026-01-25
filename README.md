@@ -35,7 +35,6 @@ PlaywrightAutomation/
 ├── messages/             # API responses and error logs
 │   ├── api-responses/    # Successful API responses
 │   └── error-messages/   # API error logs
-├── utils/                # Shared utilities
 ├── config/               # Configuration files
 └── playwright.config.js  # Playwright configuration
 ```
@@ -180,9 +179,6 @@ Error messages are saved to `/messages/error-messages/` for debugging.
 - `InvoicePage`: Order confirmation and invoice details
 - `ProfilePage`: User profile and address management
 
-### Utilities
-- `CustomAssertions`: Custom assertion helpers
-- `testHelpers`: Test data generation and utilities
 
 ## 🔍 Debugging
 

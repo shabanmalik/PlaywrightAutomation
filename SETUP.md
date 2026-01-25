@@ -41,7 +41,6 @@ PlaywrightAutomation/
 ├── messages/              # API response logs
 │   ├── api-responses/     # Successful API calls
 │   └── error-messages/    # Error logs
-├── utils/                 # Shared utilities
 └── config/                # Configuration files
 ```
 

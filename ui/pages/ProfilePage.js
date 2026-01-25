@@ -19,17 +19,8 @@ export class ProfilePage {
     await this.page.waitForTimeout(1000);
 
     const getValue = async (locator) => {
-      try {
-        await locator.waitFor({ state: 'visible', timeout: 5000 });
-        const value = await locator.inputValue();
-        return value || '';
-      } catch (e) {
-        try {
-          return await locator.textContent() || '';
-        } catch (e2) {
-          return '';
-        }
-      }
+      await locator.waitFor({ state: 'visible', timeout: 5000 }).catch(() => null);
+      return await locator.inputValue().catch(() => locator.textContent().catch(() => ''));
     };
 
     return {

@@ -43,11 +43,7 @@ test.describe('Scenario 3: User State Persistence', () => {
     const apiAddress = await userClient.getProfile();
     expect(apiAddress.address).toBeDefined();
     
-    const apiStreet = apiAddress.address.street || '';
-    const apiCity = apiAddress.address.city || '';
-    const apiState = apiAddress.address.state || '';
-    const apiPostalCode = apiAddress.address.postal_code || '';
-    const apiCountry = apiAddress.address.country || '';
+    const { street: apiStreet, city: apiCity, state: apiState, postal_code: apiPostalCode, country: apiCountry } = apiAddress.address || {};
 
     await loginPage.goto();
     await loginPage.login(testUser.email, testUser.password);

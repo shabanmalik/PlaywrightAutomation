@@ -32,7 +32,6 @@ export const API_CONFIG = {
     },
     USERS: {
       PROFILE: '/users/me',
-      ADDRESS: '/users/me/address',
       UPDATE_ADDRESS: '/users/{id}'
     }
   }

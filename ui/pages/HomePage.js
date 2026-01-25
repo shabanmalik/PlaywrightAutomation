@@ -2,15 +2,12 @@ export class HomePage {
   constructor(page) {
     this.page = page;
     this.searchInput = page.locator('id=search-query');
-    this.categoryFilter = page.locator('select[name="category"]');
-    this.productCards = page.locator('[data-test="product-card"], .product-card');
     this.productNames = page.locator('[data-test="product-name"], .product-name');
   }
 
   async goto() {
     await this.page.goto('https://practicesoftwaretesting.com');
     await this.page.waitForLoadState('domcontentloaded');
-    await this.page.waitForTimeout(1000);
   }
 
   async searchProduct(searchTerm) {

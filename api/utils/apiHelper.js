@@ -90,19 +90,4 @@ export class ApiHelper {
     
     fs.writeFileSync(filepath, JSON.stringify(errorData, null, 2));
   }
-
-  async retryRequest(method, endpoint, options = {}, maxRetries = API_CONFIG.RETRIES) {
-    let lastError;
-    for (let i = 0; i < maxRetries; i++) {
-      try {
-        return await this.makeRequest(method, endpoint, options);
-      } catch (error) {
-        lastError = error;
-        if (i < maxRetries - 1) {
-          await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
-        }
-      }
-    }
-    throw lastError;
-  }
 }
