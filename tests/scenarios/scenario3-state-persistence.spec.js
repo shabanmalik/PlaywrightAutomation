@@ -28,29 +28,26 @@ test.describe('Scenario 3: User State Persistence', () => {
     await authClient.login(testUser.email, testUser.password);
   });
 
-  test('Profile address persists after external API update', async ({ page, request }) => {
+  test('Profile address persists after external API update', async ({ page }) => {
     const newAddress = {
       street: '456 API Test Street',
       city: 'API City',
       state: 'AP',
-      zip_code: '54321',
+      postal_code: '54321',
       country: 'US'
     };
 
-    await userClient.updateAddress(newAddress).catch(() => null);
+    const profile = await userClient.getProfile();
+    await userClient.updateAddress(newAddress, profile.id);
 
-    const apiAddress = await userClient.getAddress().catch(async () => {
-      const profile = await userClient.getProfile();
-      return profile.address || profile;
-    });
-
-    expect(apiAddress).toBeDefined();
+    const apiAddress = await userClient.getProfile();
+    expect(apiAddress.address).toBeDefined();
     
-    const apiStreet = apiAddress.street || apiAddress.address || '';
-    const apiCity = apiAddress.city || '';
-    const apiState = apiAddress.state || apiAddress.province || '';
-    const apiZip = apiAddress.zip_code || apiAddress.zip || '';
-    const apiCountry = apiAddress.country || '';
+    const apiStreet = apiAddress.address.street || '';
+    const apiCity = apiAddress.address.city || '';
+    const apiState = apiAddress.address.state || '';
+    const apiPostalCode = apiAddress.address.postal_code || '';
+    const apiCountry = apiAddress.address.country || '';
 
     await loginPage.goto();
     await loginPage.login(testUser.email, testUser.password);
@@ -61,7 +58,7 @@ test.describe('Scenario 3: User State Persistence', () => {
     if (apiStreet) expect(uiAddress.street.toLowerCase()).toContain(apiStreet.toLowerCase());
     if (apiCity) expect(uiAddress.city.toLowerCase()).toContain(apiCity.toLowerCase());
     if (apiState) expect(uiAddress.state.toLowerCase()).toContain(apiState.toLowerCase());
-    if (apiZip) expect(uiAddress.zip).toContain(apiZip);
+    if (apiPostalCode) expect(uiAddress.zip).toContain(apiPostalCode);
     if (apiCountry) expect(uiAddress.country.toLowerCase()).toContain(apiCountry.toLowerCase());
   });
 });
