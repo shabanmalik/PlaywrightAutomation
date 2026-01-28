@@ -2,7 +2,7 @@ export class HomePage {
   constructor(page) {
     this.page = page;
     this.searchInput = page.locator('id=search-query');
-    this.productNames = page.locator('[data-test="product-name"], .product-name');
+    this.productNames = page.locator('[data-test="product-name"]');
   }
 
   async goto() {
@@ -22,7 +22,7 @@ export class HomePage {
   }
 
   async getProductCount() {
-    return await this.productCards.count() || await this.productNames.count();
+    return await this.productNames.count();
   }
 
   async clickProduct(productName) {
